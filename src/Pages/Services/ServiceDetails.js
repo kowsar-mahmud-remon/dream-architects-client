@@ -18,11 +18,30 @@ const ServiceDetails = () => {
       service: _id,
       serviceName: title,
       price,
-      customer: name,
-      customer_img: photoURL,
+      customerName: name,
+      customerImg: photoURL,
       email,
       review
     };
+
+    fetch('http://localhost:5000/review', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(reviewDetails)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert('review successfully');
+          form.reset();
+        }
+      })
+      .catch(error => console.error(error));
+
+
   };
 
   return (
@@ -40,7 +59,7 @@ const ServiceDetails = () => {
 
       <div className="">
         <form onSubmit={handleReview}>
-          <textarea name='review' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Your Review"></textarea>
+          <textarea name='review' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Add a Review" required></textarea>
           <br />
           <input className='btn btn-secondary' type="submit" value="Review" />
         </form>
