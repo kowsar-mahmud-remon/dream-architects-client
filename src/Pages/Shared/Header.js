@@ -6,6 +6,7 @@ const Header = () => {
 
   const menuItems = <>
     <li className='font-semibold'><Link to='/'>Home</Link></li>
+    <li className='font-semibold'><Link to='/services'>Services</Link></li>
     <li className='font-semibold'><Link to='/login'>Login</Link></li>
   </>;
   return (
@@ -21,7 +22,8 @@ const Header = () => {
             </ul>
           </div>
           <Link to='/' className="btn btn-ghost normal-case text-xl">
-            <img className='h-16' src={logo} alt="" />
+            <img className='h-14' src={logo} alt="" />
+            <h2 className='text-2xl'>Dream Architects</h2>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
