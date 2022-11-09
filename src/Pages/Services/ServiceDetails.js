@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const ServiceDetails = () => {
@@ -57,12 +57,17 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      <div className="">
-        <form onSubmit={handleReview}>
-          <textarea name='review' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Add a Review" required></textarea>
-          <br />
-          <input className='btn btn-secondary' type="submit" value="Review" />
-        </form>
+      <div className="my-10">
+        {
+          user?.uid ?
+            <form onSubmit={handleReview}>
+              <textarea name='review' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Add a Review" required></textarea>
+              <br />
+              <input className='btn btn-secondary' type="submit" value="Review" />
+            </form>
+            :
+            <p className='text-4xl text-center'>Please <Link to='/login' className='text-secondary'>Login</Link> to add a review</p>
+        }
 
       </div>
     </div>
