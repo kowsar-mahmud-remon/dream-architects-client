@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Banner.css';
 
 const Banner = () => {
@@ -10,7 +11,7 @@ const Banner = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold text-white">I Can Help to Build Your Dream Home</h1>
             <p className="mb-5 text-white">When meeting with your architect for the pre-design phase you should have a final idea of what you want and pictures to go with your vision. This information will help the architect to create the perfect home for you off of your final ideas and visuals.</p>
-            <button className="btn btn-active btn-secondary text-white">Get Started</button>
+            <Link to='/services'><button className="btn btn-active btn-secondary text-white">Get Started</button></Link>
           </div>
         </div>
       </div>
