@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import AllReviews from './AllReviews';
 
 const ServiceDetails = () => {
+  const [allReviews, setAllReviews] = useState([]);
   const { user } = useContext(AuthContext);
   const { _id, img, price, title, description } = useLoaderData();
 
@@ -44,6 +46,12 @@ const ServiceDetails = () => {
 
   };
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?service=${_id}`)
+      .then(res => res.json())
+      .then(data => setAllReviews(data));
+  }, [_id]);
+
   return (
     <div className="">
       <div className="card card-compact bg-base-100 shadow-xl md:w-1/2 mx-auto my-10">
@@ -70,6 +78,36 @@ const ServiceDetails = () => {
         }
 
       </div>
+
+      <div className="">
+        <div className="overflow-x-auto w-full my-10">
+          <table className="table w-full">
+            {/* <thead>
+              <tr>
+                <th>
+                  <label>
+                    <input type="checkbox" className="checkbox" />
+                  </label>
+                </th>
+                <th>Name</th>
+                <th>Service Name</th>
+                <th>Review</th>
+                <th>Review</th>
+              </tr>
+            </thead> */}
+            <tbody>
+              {
+                allReviews.map(allReview => <AllReviews
+                  key={allReview._id}
+                  allReview={allReview}
+                ></AllReviews>)
+              }
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
     </div>
   );
 };

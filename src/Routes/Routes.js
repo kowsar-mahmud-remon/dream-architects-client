@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Login/SignUp";
 import Review from "../Pages/Services/Review";
+import ReviewUpdate from "../Pages/Services/ReviewUpdate";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Services from "../Pages/Services/Services";
 
@@ -40,6 +41,10 @@ export const routes = createBrowserRouter([
       {
         path: '/review',
         element: <Review></Review>
+      },
+      {
+        path: '/update',
+        element: <ReviewUpdate></ReviewUpdate>
       }
     ]
   }
