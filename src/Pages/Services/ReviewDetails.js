@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ReviewDetails = ({ allReview, handleDelete }) => {
-  const { _id, serviceName, price, email, customerName, customerImg, review } = allReview;
-
-
+  const { _id, serviceName, price, email, customerName, customerImg, review, service } = allReview;
+  console.log('new', _id);
 
   return (
     <tr>
@@ -32,7 +32,7 @@ const ReviewDetails = ({ allReview, handleDelete }) => {
       </td>
       <td>{review}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <Link to={`/update/${_id}`}><button className="btn btn-ghost">Edit Review</button></Link>
       </th>
     </tr>
   );
