@@ -41,7 +41,7 @@ export const routes = createBrowserRouter([
       {
         path: '/details/:id',
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://dream-architects-server.vercel.app/services/${params.id}`)
       },
       {
         path: '/review',
@@ -50,7 +50,7 @@ export const routes = createBrowserRouter([
       {
         path: '/update/:id',
         element: <PrivateRoute><ReviewUpdate></ReviewUpdate></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({ params }) => fetch(`https://dream-architects-server.vercel.app/review/${params.id}`)
       },
       {
         path: '/create',

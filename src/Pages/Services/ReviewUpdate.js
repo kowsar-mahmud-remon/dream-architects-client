@@ -31,7 +31,7 @@ const ReviewUpdate = () => {
       review
     };
 
-    fetch(`http://localhost:5000/review/${_id}`, {
+    fetch(`https://dream-architects-server.vercel.app/review/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

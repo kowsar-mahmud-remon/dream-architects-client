@@ -28,7 +28,7 @@ const ServiceDetails = () => {
       review
     };
 
-    fetch('http://localhost:5000/review', {
+    fetch('https://dream-architects-server.vercel.app/review', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -49,7 +49,7 @@ const ServiceDetails = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?service=${_id}`)
+    fetch(`https://dream-architects-server.vercel.app/reviews?service=${_id}`)
       .then(res => res.json())
       .then(data => setAllReviews(data));
   }, [_id]);

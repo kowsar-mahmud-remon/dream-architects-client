@@ -8,7 +8,7 @@ const Services = () => {
   useTitle('Service');
 
   useEffect(() => {
-    fetch('http://localhost:5000/services')
+    fetch('https://dream-architects-server.vercel.app/services')
       .then(res => res.json())
       .then(data => {
         setServices(data);

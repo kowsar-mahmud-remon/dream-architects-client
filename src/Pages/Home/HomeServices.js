@@ -5,7 +5,7 @@ import ServiceCard from '../Shared/ServiceCard';
 const HomeServices = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/home')
+    fetch('https://dream-architects-server.vercel.app/home')
       .then(res => res.json())
       .then(data => setServices(data));
   }, []);
