@@ -3,13 +3,14 @@ import Services from '../Services/Services';
 import About from './About';
 import Banner from './Banner';
 import Experience from './Experience';
+import HomeServices from './HomeServices';
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
       <About></About>
-      <Services></Services>
+      <HomeServices></HomeServices>
       <Experience></Experience>
     </div>
   );

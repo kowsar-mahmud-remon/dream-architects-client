@@ -5,8 +5,11 @@ const ServiceCard = ({ service }) => {
   const { _id, img, price, title, description } = service;
 
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img className='h-60 w-full' src={img} alt="Shoes" /></figure>
+    <div className="card card-compact w-96 bg-base-100 shadow-xl mb-2">
+      <figure>
+        <img className='h-60 w-full' src={img} alt="Shoes" />
+
+      </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p className='text-2xl text-indigo-600 font-semibold'>Price: ${price}</p>
@@ -18,7 +21,7 @@ const ServiceCard = ({ service }) => {
               <p>{description}</p>
           }
         </p>
-        <div className="card-actions justify-center my-4">
+        <div className="card-actions justify-center my-5">
           <Link to={`/details/${_id}`}>
             <button className="btn btn-outline btn-secondary">View Details</button>
           </Link>

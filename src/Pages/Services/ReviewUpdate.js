@@ -61,9 +61,9 @@ const ReviewUpdate = () => {
 
 
   return (
-    <div>
-      <h2>Please Update: {price}</h2>
-      <form onSubmit={handleUpdateReview}>
+    <div className='mb-20'>
+      <h2 className='text-4xl text-center my-10'>Please Update Your Review</h2>
+      <form onSubmit={handleUpdateReview} className='w-full lg:w-3/4 mx-auto'>
         <textarea name='review' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Add a Review" required></textarea>
         <br />
         <input className='btn btn-secondary' type="submit" value="Update Review" />
