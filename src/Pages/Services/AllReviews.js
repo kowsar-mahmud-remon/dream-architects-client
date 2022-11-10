@@ -24,7 +24,7 @@ const AllReviews = ({ allReview }) => {
         <br />
         <span className="badge badge-ghost badge-sm">${price}</span>
       </td>
-      <td>{review}</td>
+      <td><span className='text-xl'>Review</span> <br /> {review}</td>
       <th>
       </th>
     </tr>

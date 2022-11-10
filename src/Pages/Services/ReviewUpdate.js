@@ -3,10 +3,12 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const ReviewUpdate = () => {
   const { user } = useContext(AuthContext);
   const { _id, img, price, title, description } = useLoaderData();
+  useTitle('Update Review');
 
   // const [newReview, setNewReview] = useState();
 

@@ -3,17 +3,30 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import ReviewDetails from './ReviewDetails';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const Review = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  useTitle('My Review');
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/review?email=${user?.email}`)
-      .then(res => res.json())
-      .then(data => setReviews(data));
-  }, [user?.email]);
+    fetch(`http://localhost:5000/review?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then(res => {
+        if (res.status === 401 || res.status === 403) {
+          return logOut();
+        }
+        return res.json();
+      })
+      .then(data => {
+        setReviews(data);
+      });
+  }, [user?.email, logOut]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure, you delete your review?');

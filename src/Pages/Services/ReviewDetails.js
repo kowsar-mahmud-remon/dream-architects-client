@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ReviewDetails = ({ allReview, handleDelete }) => {
   const { _id, serviceName, price, email, customerName, customerImg, review, service } = allReview;
-  console.log('new', _id);
+  // console.log('new', _id);
 
   return (
     <tr>
