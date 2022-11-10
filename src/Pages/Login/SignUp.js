@@ -45,7 +45,7 @@ const SignUp = () => {
           <img className='w-3/4 mx-auto' src={img} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-10">
-          <h1 className="text-5xl text-center font-bold">Sign Up</h1>
+          <h1 className="text-5xl text-center font-bold text-indigo-600">Sign Up</h1>
           <form onSubmit={handleSignUp} className="card-body">
 
             <div className="form-control">
@@ -77,7 +77,7 @@ const SignUp = () => {
 
             </div>
             <div className="form-control mt-6">
-              <input className="btn btn-primary" type="submit" value="Sign Up" />
+              <input className="btn btn-secondary" type="submit" value="Sign Up" />
             </div>
           </form>
           <p className='text-center'>Already have an account? <Link className='text-indigo-600' to='/login'>Login</Link></p>

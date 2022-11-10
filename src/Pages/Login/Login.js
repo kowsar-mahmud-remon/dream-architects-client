@@ -1,10 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.jpg';
 import { AuthContext } from '../../contexts/AuthProvider';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
   const { login } = useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -17,6 +23,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch(error => console.log(error));
   };
@@ -27,8 +34,8 @@ const Login = () => {
           <img className='w-3/4 mx-auto' src={img} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-10">
-          <h1 className="text-5xl text-center font-bold">Login</h1>
-          <form onSubmit={handleLogin} className="card-body">
+          <h1 className="text-5xl text-center font-bold text-indigo-600">Login</h1>
+          <form onSubmit={handleLogin} className="card-body pb-0">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -44,10 +51,11 @@ const Login = () => {
                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
               </label>
             </div>
-            <div className="form-control mt-6">
-              <input className="btn btn-primary" type="submit" value="Login" />
+            <div className="form-control mt-2">
+              <input className="btn btn-secondary" type="submit" value="Login" />
             </div>
           </form>
+          <SocialLogin></SocialLogin>
           <p className='text-center'>New to Dream Architects, <Link className='text-indigo-600' to='/signup'>Sign Up</Link></p>
         </div>
       </div>

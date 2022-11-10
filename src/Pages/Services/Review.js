@@ -45,7 +45,7 @@ const Review = () => {
   };
 
   return (
-    <div>
+    <div className=' mb-32'>
       {
         reviews.length ?
 

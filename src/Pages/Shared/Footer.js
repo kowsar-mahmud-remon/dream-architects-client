@@ -7,24 +7,24 @@ const Footer = () => {
       <footer className="footer p-10 bg-base-200 text-base-content">
         <div>
           <img className='w-1/3' src={logo} alt="" />
-          <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+          <p className='pt-1'>Dream Architects<br />Providing Architect's Service since 2012</p>
         </div>
         <div>
-          <span className="footer-title">Services</span>
-          <a href="/" className="link link-hover">Branding</a>
-          <a href="/" className="link link-hover">Design</a>
-          <a href="/" className="link link-hover">Marketing</a>
-          <a href="/" className="link link-hover">Advertisement</a>
+          <span className="footer-title text-indigo-500 text-base">Services</span>
+          <a href="/" className="link link-hover">Architect Design</a>
+          <a href="/" className="link link-hover">Building Construction Design</a>
+          <a href="/" className="link link-hover">Home Design</a>
+          <a href="/" className="link link-hover">Office Room Design</a>
         </div>
         <div>
-          <span className="footer-title">Company</span>
-          <a href="/" className="link link-hover">About us</a>
+          <span className="footer-title text-indigo-500 text-base">About</span>
+          <a href="/" className="link link-hover">About me</a>
           <a href="/" className="link link-hover">Contact</a>
           <a href="/" className="link link-hover">Jobs</a>
           <a href="/" className="link link-hover">Press kit</a>
         </div>
         <div>
-          <span className="footer-title">Legal</span>
+          <span className="footer-title text-indigo-500 text-base">Legal</span>
           <a href="/" className="link link-hover">Terms of use</a>
           <a href="/" className="link link-hover">Privacy policy</a>
           <a href="/" className="link link-hover">Cookie policy</a>

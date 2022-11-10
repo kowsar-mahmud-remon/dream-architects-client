@@ -7,13 +7,16 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <h2 className='text-5xl'>Loading...</h2>;
+    return <div className='text-center my-20'>
+      <button className="btn btn-square loading text-success"></button>
+    </div>;
+
   }
 
   if (user) {
     return children;
   }
-  return <Navigate state={{ from: location }} replace></Navigate>;
+  return <Navigate to='/login' state={{ from: location }} replace></Navigate>;
 };
 
 export default PrivateRoute;
