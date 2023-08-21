@@ -10,7 +10,7 @@ const HomeServices = () => {
       .then(data => setServices(data));
   }, []);
   return (
-    <div className="my-10">
+    <div className="my-10 px-5 lg:px-0">
       <div className='text-center mb-5'>
         <h2 className='text-5xl font-semibold mb-10 mt-2'>My Services</h2>
       </div>
@@ -25,7 +25,7 @@ const HomeServices = () => {
         </div>
       </div>
       <div className="text-center my-10">
-        <Link to='/services' className=''><button className='btn btn-secondary bg-indigo-900 text-white'>View All</button></Link>
+        <Link to='/services' className=''><button className='btn btn-secondary bg-indigo-900 text-white rounded-md px-8'>View All</button></Link>
       </div>
     </div>
   );

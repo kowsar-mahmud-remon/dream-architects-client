@@ -6,6 +6,10 @@ import Banner from './Banner';
 import Experience from './Experience';
 import HomeServices from './HomeServices';
 import MakesGood from './MakesGood';
+import CreateYourArchitecture from './CreateYourArchitecture';
+import DreamHome from './DreamHome';
+import ExperiencePage from './ExperiencePage';
+import NewDesign from './NewDesign';
 
 const Home = () => {
   useTitle('Home');
@@ -14,7 +18,11 @@ const Home = () => {
       <Banner></Banner>
       <About></About>
       <HomeServices></HomeServices>
+      <NewDesign></NewDesign>
+      <CreateYourArchitecture></CreateYourArchitecture>
       <MakesGood></MakesGood>
+      <DreamHome></DreamHome>
+      <ExperiencePage></ExperiencePage>
       <Experience></Experience>
     </div>
   );
