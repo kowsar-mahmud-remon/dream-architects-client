@@ -25,7 +25,7 @@ const HomeServices = () => {
         </div>
       </div>
       <div className="text-center my-10">
-        <Link to='/services' className=''><button className='btn btn-secondary bg-indigo-900 text-white rounded-md px-8'>View All</button></Link>
+        <Link to='/services' className=''><button className='btn btn-secondary bg-indigo-900 text-white rounded-md px-10 border-0'>View All</button></Link>
       </div>
     </div>
   );

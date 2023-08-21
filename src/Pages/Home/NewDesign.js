@@ -4,7 +4,7 @@ import { IoIosArrowDroprightCircle } from 'react-icons/io';
 
 const NewDesign = () => {
   return (
-    <div className='grid grid-cols-4 text-gray-300'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-gray-300 py-10 px-5 lg:px-0'>
       <div className="p-4 bg-indigo-600">
         <h1 className='text-6xl font-extrabold'>01</h1>
         <h4 className='text-2xl font-semibold mt-4'>Schematic Design</h4>

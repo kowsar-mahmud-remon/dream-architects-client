@@ -13,7 +13,7 @@ const DreamHome = () => {
         <p className="py-6 text-lg">We are founded on the belief that our collaborative nature and the journey we take with our clients is reflected in every project by creating exciting, functional, modern spaces.
         </p>
         <div className=" my-6">
-          <Link to='/services' className=''><button className='btn btn-secondary bg-indigo-900 text-white rounded px-12'>Start Now</button></Link>
+          <Link to='/services' className=''><button className='btn btn-secondary bg-indigo-900 text-white rounded px-12 border-0'>Start Now</button></Link>
         </div>
       </div>
       <div className="">
