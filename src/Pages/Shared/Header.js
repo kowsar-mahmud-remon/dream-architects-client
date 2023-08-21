@@ -32,8 +32,13 @@ const Header = () => {
     }
 
   </>;
+
+  const navbarShadow = {
+    boxShadow: '0 2px 3px rgba(0, 0, 0, 0.4)',
+  };
+
   return (
-    <div className='sticky top-0 z-10'>
+    <div className='sticky top-0 z-10' style={navbarShadow}>
       <div className="navbar h-20 bg-base-200 p-0">
         <div className="navbar-start w-full">
           <div className="dropdown">
@@ -54,15 +59,6 @@ const Header = () => {
             {menuItems}
           </ul>
         </div>
-        {/* <div className="navbar-end"> */}
-        {/* {
-            user?.email ?
-              <button className='btn btn-ghost font-semibold'><Link to='/review'>My Reviews</Link></button>
-
-              :
-              <button className='btn btn-ghost font-semibold'><Link to='/login'>Login</Link></button>
-          } */}
-        {/* </div> */}
       </div>
     </div>
   );

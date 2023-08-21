@@ -5,6 +5,7 @@ import About from './About';
 import Banner from './Banner';
 import Experience from './Experience';
 import HomeServices from './HomeServices';
+import MakesGood from './MakesGood';
 
 const Home = () => {
   useTitle('Home');
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner></Banner>
       <About></About>
       <HomeServices></HomeServices>
+      <MakesGood></MakesGood>
       <Experience></Experience>
     </div>
   );

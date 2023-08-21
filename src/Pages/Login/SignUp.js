@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.jpg';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/useTitle';
@@ -8,6 +8,12 @@ const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
   useTitle('SignUp');
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || '/';
+
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -36,7 +42,7 @@ const SignUp = () => {
           .then(data => {
             console.log(data);
             localStorage.setItem('token', data.token);
-            // navigate(from, { replace: true });
+            navigate(from, { replace: true });
           });
 
       })
