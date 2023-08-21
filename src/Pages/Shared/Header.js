@@ -33,9 +33,9 @@ const Header = () => {
 
   </>;
   return (
-    <div>
-      <div className="navbar h-20 bg-base-200">
-        <div className="navbar-start">
+    <div className='sticky top-0 z-10'>
+      <div className="navbar h-20 bg-base-200 p-0">
+        <div className="navbar-start w-full">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -44,7 +44,7 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost normal-case text-xl pl-0">
+          <Link to='/' className="flex items-center font-semibold normal-case text-xl pl-0">
             <img className='h-14' src={logo} alt="" />
             <h2 className='text-2xl ml-1'>Dream Architects</h2>
           </Link>
@@ -54,15 +54,15 @@ const Header = () => {
             {menuItems}
           </ul>
         </div>
-        <div className="navbar-end">
-          {/* {
+        {/* <div className="navbar-end"> */}
+        {/* {
             user?.email ?
               <button className='btn btn-ghost font-semibold'><Link to='/review'>My Reviews</Link></button>
 
               :
               <button className='btn btn-ghost font-semibold'><Link to='/login'>Login</Link></button>
           } */}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
